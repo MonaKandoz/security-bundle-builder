@@ -1,0 +1,68 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  flex-shrink: 0;
+}
+
+.btn {
+  @include m.reset-button;
+  @include m.focus-ring;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  width: 20px;
+  height: 20px;
+  border-radius: v.$radius-sm;
+  border: 2px solid transparent;
+  background: v.$color-white-2;
+  color: v.$color-grey-57;
+  transition:
+    background v.$transition-fast,
+    border-color v.$transition-fast,
+    color v.$transition-fast;
+  
+  &:hover:not(:disabled) {
+    border-color: v.$color-purple-900;
+    color: v.$color-purple-900;
+  }
+
+  &:disabled {
+    background: v.$color-white;
+    border-color: v.$color-disabled-border;
+    cursor: not-allowed;
+
+    svg *{
+      fill: v.$color-disabled-fg;
+    }
+  }
+  
+}
+
+.btnWhite{
+  background: v.$color-white;
+  
+  &:disabled {
+    background: v.$color-disabled-bg;
+    border-color: v.$color-disabled-fg;
+    cursor: not-allowed;
+
+    svg *{
+      fill: v.$color-grey-57;
+    }
+  }
+}
+
+.value {
+  font-family: v.$Gilroy-SemiBold;
+  font-size: 16px;
+  color: v.$color-ink;
+  font-variant-numeric: tabular-nums;
+}

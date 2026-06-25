@@ -1,0 +1,65 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+
+  @include m.wide-down {
+    flex-direction: column;
+  }
+  /* 
+  @include m.desktop-down {
+    flex-direction: row;
+  }
+
+  @include m.labtop-down {
+    flex-direction: column;
+  }
+
+  @include m.tablet-down {
+    flex-direction: row;
+  } */
+}
+
+.bigGap{
+  gap: 10px;
+}
+
+.right {
+  align-items: flex-end;
+  text-align: right;
+  margin-left: auto;
+}
+
+.left {
+  align-items: flex-start;
+  text-align: left;
+  margin-right: auto;
+}
+
+.compareAt {
+  font-family: v.$Gilroy-Regular;
+  font-size: 16px;
+  color: v.$color-danger;
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.compareReview{
+  font-family: v.$Gilroy-Medium;
+  color:v.$color-review;
+}
+
+.active {
+  font-family: v.$Gilroy-Regular;
+  font-size: 16px;
+  color: v.$color-grey-57;
+  white-space: nowrap;
+}
+
+.review{
+  font-family: v.$Gilroy-SemiBold;
+  color: v.$color-purple-900;
+}

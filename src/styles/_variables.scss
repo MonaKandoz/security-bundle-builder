@@ -1,0 +1,67 @@
+// ============================================
+// Design tokens — Security Bundle Builder
+// Sampled from provided Figma/design
+// ============================================
+
+// Colors — brand purple scale
+$color-purple-900: #4e2fd2; // badges, headline accents
+$color-purple-900-70: #4e2fd2b3; // badges, headline accents
+$color-purple-600: #6c4ce0; // primary buttons
+$color-purple-500: #836ddf; // selected borders, links, prices
+$color-purple-300: #aaa0eb; // mid accents
+$color-purple-50: #edf4ff; // page / section background (blue-purple tint)
+
+
+// Neutrals
+$color-ink: #0b0d10; // headings
+$color-muted: #1f1f1fbf; // secondary text, "Learn More" adjacent copy
+$color-subtle: #484848; // eyebrow labels (STEP X OF 4, CAMERAS)
+$color-grey-57: #575757;
+$color-review: #6F7882;
+$color-eyebrow: #A8B2BD;
+$color-border: #1F1F1F; // card borders, dividers
+$color-border-2: #cccccc; // card borders, dividers
+$color-disabled-border: #E6EBF0;
+$color-disabled-bg: #F1F1F2;
+$color-disabled-fg: #CED6DE;
+$color-white: #ffffff;
+$color-white-2: #F0F4F7;
+$color-blue: #0000ee;
+
+// Semantic
+$color-danger: #D8392B; // strikethrough compare-at price
+$color-success: #0AA288;
+$color-selected-bg: #1df0bb0a;
+
+// Typography
+$Gilroy-Regular: 'Gilroy-Regular', sans-serif;
+$Gilroy-Medium: 'Gilroy-Medium', sans-serif;
+$Gilroy-SemiBold: 'Gilroy-SemiBold', sans-serif;
+$Gilroy-Bold: 'Gilroy-Bold', sans-serif;
+$font-family-base:
+  Gilroy-Medium, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+  sans-serif;
+
+// Radii
+$radius-xxs: 2px;
+$radius-xs: 3px;
+$radius-sm: 4px;
+$radius-mds: 5px;
+$radius-md: 7px;
+$radius-lg: 10px;
+
+// Layout
+$container-max: 1440px;
+$review-width: 360px;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-labtop: 992px;
+$bp-desktop: 1200px;
+$bp-wide: 1400px;
+
+// Transitions
+$ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-fast: 150ms $ease-standard;
+$transition-base: 220ms $ease-standard;

@@ -1,0 +1,45 @@
+@use '../styles/variables' as v;
+@use '../styles/mixins' as m;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  @include m.reset-button;
+  @include m.focus-ring;
+  display: flex;
+  height: 26px;
+  padding: 1px 5px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: v.$radius-xxs;
+  border: 0.5px solid v.$color-border-2;
+  background: v.$color-white;
+  font-size: 10px;
+  color: v.$color-border;
+  transition:
+    border-color v.$transition-fast,
+    background v.$transition-fast;
+
+  &:hover {
+    border-color: v.$color-purple-300;
+  }
+}
+
+.active {
+  border-color: v.$color-success;
+  background: v.$color-selected-bg;
+}
+
+.img {
+  width: auto;
+  height: 100%;
+}
+
+.label {
+  white-space: nowrap;
+}

@@ -1,0 +1,60 @@
+@use './styles/variables' as v;
+@use './styles/mixins' as m;
+
+.page {
+  max-width: v.$container-max;
+  margin: 0 auto;
+  padding: 50px 62px;
+
+  @include m.tablet-down {
+    padding: 31px 0 0 0;
+  }
+}
+
+.hero {
+  display: none;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @include m.tablet-down {
+    display: block;
+  }
+}
+
+.heroTitle {
+  font-family: v.$Gilroy-Bold;
+  font-size: 32px;
+  color: v.$color-border;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 33px;
+  align-items: start;
+
+  @include m.wide-down {
+    grid-template-columns: minmax(0, 1fr) v.$review-width;
+    gap: 25px;
+  }
+
+  @include m.labtop-down{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.builder {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  m.mobile{
+    gap: 5px;
+  }
+}
+
+.reviewCol {
+  min-width: 0;
+}

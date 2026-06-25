@@ -1,0 +1,72 @@
+@use 'variables' as v;
+
+@mixin mobile {
+  @media (max-width: #{v.$bp-mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{v.$bp-tablet}) {
+    @content;
+  }
+}
+
+@mixin labtop-down {
+  @media (max-width: #{v.$bp-labtop}) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @media (max-width: #{v.$bp-desktop}) {
+    @content;
+  }
+}
+
+@mixin wide-down {
+  @media (max-width: #{v.$bp-wide}) {
+    @content;
+  }
+}
+@mixin wide-up {
+  @media (min-width: #{v.$bp-wide}) {
+    @content;
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid v.$color-purple-500;
+    outline-offset: 2px;
+  }
+}
+
+@mixin eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: v.$color-subtle;
+  width: 100%;
+
+  @media (max-width: #{v.$bp-wide}) {
+    font-size: 10px;
+  }
+}
+
+@mixin reset-button {
+  appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
