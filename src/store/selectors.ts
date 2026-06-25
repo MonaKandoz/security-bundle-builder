@@ -52,7 +52,7 @@ export const selectReviewLines = createSelector([selectQuantities], (quantities)
   for (const product of products) {
     if (product.reviewOnly) {
       const key = lineKey(product.id);
-      const qty = quantities[key] ?? (product.hasStepper ? 0 : 1);
+      const qty = quantities[key] ?? (product.noQuntitiy ? 1: 0);
       if (qty > 0) {
         lines.push({
           key,
@@ -130,17 +130,15 @@ const SHIPPING_COST = 0; // "Fast Shipping — FREE" per design
 const FINANCING_MONTHS = 12; // "as low as $X/mo"
 
 export const selectOrderSummary = createSelector([selectReviewLines], (lines): OrderSummary => {
-  // Plan is shown separately as a monthly line, excluded from the one-time bundle total
-  const oneTimeLines = lines.filter((l) => !l.product.isMonthly);
 
-  const itemsTotal = oneTimeLines.reduce((sum, l) => sum + l.lineTotal, 0);
-  const itemsCompareAtTotal = oneTimeLines.reduce(
+  const itemsTotal = lines.reduce((sum, l) => sum + l.lineTotal, 0);
+  const itemsCompareAtTotal = lines.reduce(
     (sum, l) => sum + (l.lineCompareAtTotal ?? l.lineTotal),
     0,
   );
 
   const grandTotal = itemsTotal + SHIPPING_COST;
-  const grandCompareAtTotal = itemsCompareAtTotal + SHIPPING_COMPARE_AT;
+  const grandCompareAtTotal = itemsCompareAtTotal + SHIPPING_COST;
   const savings = grandCompareAtTotal - grandTotal;
 
   return {
@@ -151,7 +149,7 @@ export const selectOrderSummary = createSelector([selectReviewLines], (lines): O
     grandTotal,
     grandCompareAtTotal,
     savings,
-    monthlyFinancing: grandTotal / FINANCING_MONTHS,
+    monthlyFinancing: grandCompareAtTotal / FINANCING_MONTHS,
   };
 });
 

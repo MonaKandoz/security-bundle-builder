@@ -14,7 +14,7 @@ import { SatisfactionSeal } from '../assets/SatisfactionSeal';
 import styles from './ReviewPanel.module.scss';
 
 const formatPrice = (value: number) =>
-  value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 });
+  value.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 });
 
 export const ReviewPanel: FC = () => {
   const dispatch = useAppDispatch();
