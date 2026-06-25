@@ -82,3 +82,6 @@ src/
 - No automated test suite (Jest/RTL) — given the scope, verification was done via manual interaction testing in a real browser rather than written unit tests. This would be the first thing added in a follow-up pass.
 - No backend/API layer — the JSON bonus is implemented as a static local file, not served from an endpoint.
 - Product illustrations are stylized SVGs, not the actual product photography from the design.
+
+
+![CI](https://github.com/monakandoz/security-bundle-builder/actions/workflows/ci.yml/badge.svg)
