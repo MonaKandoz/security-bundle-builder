@@ -17,6 +17,8 @@ npm run dev
 
 Then open the printed local URL (typically `http://localhost:5173`).
 
+LIVE LINK (`https://monakandoz.github.io/security-bundle-builder/`)
+
 Other scripts:
 
 ```bash
